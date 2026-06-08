@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>城市的另一種讀法｜邀請卡</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap
+        }
+
+        #cw {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0 28px;
+            font-family: 'Hiragino Mincho ProN', 'Noto Serif TC', 'Source Han Serif TC', serif
+        }
+
+        .card {
+            width: 360px;
+            height: 582px;
+            position: relative;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 0.5px solid rgba(0, 0, 0, 0.12)
+        }
+
+        .pg {
+            display: none;
+            width: 360px;
+            height: 582px;
+            flex-direction: column;
+            overflow: hidden
+        }
+
+        .pg.on {
+            display: flex
+        }
+
+        .dk {
+            background: #1A1816;
+            color: #E8E4DC
+        }
+
+        .cr {
+            background: #FAF8F3;
+            color: #2C2A27
+        }
+
+        .nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 360px;
+            margin-top: 14px
+        }
+
+        .nb {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 0.5px solid var(--color-border-secondary);
+            background: transparent;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s
+        }
+
+        .nb:not(:disabled):hover {
+            background: var(--color-background-secondary)
+        }
+
+        .nb:disabled {
+            opacity: .2;
+            cursor: default
+        }
+
+        .dots {
+            display: flex;
+            gap: 5px;
+            align-items: center
+        }
+
+        .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--color-border-secondary);
+            cursor: pointer;
+            transition: all .25s
+        }
+
+        .dot.on {
+            width: 15px;
+            border-radius: 3px;
+            background: var(--color-text-secondary)
+        }
+
+        .hdiv {
+            width: 26px;
+            height: 0.5px;
+            background: currentColor;
+            opacity: .22;
+            margin: 12px 0
+        }
+    </style>
+
+    <div id="cw">
+        <h2 class="sr-only">城市的另一種讀法 That's It Lab 卡片，共五頁。</h2>
+        <div class="card">
+
+            <!-- PAGE 0 COVER dark -->
+            <div class="pg dk on" id="p0">
+                <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 360 582">
+                    <g fill="#E8E4DC" opacity="0.052">
+                        <ellipse cx="42" cy="492" rx="9" ry="7" />
+                        <circle cx="35" cy="481" r="4.5" />
+                        <circle cx="50" cy="481" r="4.5" />
+                        <ellipse cx="296" cy="416" rx="9" ry="7" />
+                        <circle cx="289" cy="405" r="4.5" />
+                        <circle cx="304" cy="405" r="4.5" />
+                        <ellipse cx="319" cy="158" rx="9" ry="7" />
+                        <circle cx="312" cy="147" r="4.5" />
+                        <circle cx="327" cy="147" r="4.5" />
+                        <ellipse cx="60" cy="100" rx="9" ry="7" />
+                        <circle cx="53" cy="89" r="4.5" />
+                        <circle cx="68" cy="89" r="4.5" />
+                        <ellipse cx="178" cy="544" rx="9" ry="7" />
+                        <circle cx="171" cy="533" r="4.5" />
+                        <circle cx="186" cy="533" r="4.5" />
+                        <ellipse cx="130" cy="278" rx="9" ry="7" />
+                        <circle cx="123" cy="267" r="4.5" />
+                        <circle cx="138" cy="267" r="4.5" />
+                    </g>
+                </svg>
+                <div
+                    style="padding:38px 32px;display:flex;flex-direction:column;height:100%;position:relative;z-index:1;justify-content:space-between">
+                    <div>
+                        <div style="font-size:10px;letter-spacing:0.28em;color:#5A5652;margin-bottom:28px">That's It Lab
+                        </div>
+                        <div
+                            style="font-size:12px;letter-spacing:0.15em;color:#464442;line-height:2.6;margin-bottom:30px">
+                            致<br>那個低頭走路<br>卻什麼都沒看見的你</div>
+                        <div
+                            style="font-size:42px;font-weight:700;line-height:1.15;letter-spacing:0.03em;margin-bottom:14px">
+                            城市的另一種讀法</div>
+                        <div style="font-size:15px;font-weight:300;letter-spacing:0.12em;color:#6A6660">蹲下去，你才看見。</div>
+                    </div>
+                    <div style="display:flex;justify-content:flex-end;margin-right:-18px">
+                        <svg viewBox="100 150 440 380" width="228" height="197">
+                            <path d="M213,378 Q145,428 167,478 Q183,515 224,508" stroke="#2E2C2A" stroke-width="14"
+                                fill="none" stroke-linecap="round" />
+                            <path d="M224,508 Q256,520 250,502" stroke="#2E2C2A" stroke-width="9" fill="none"
+                                stroke-linecap="round" />
+                            <ellipse cx="320" cy="375" rx="108" ry="67" fill="#222020" />
+                            <ellipse cx="306" cy="390" rx="70" ry="43" fill="#2A2826" />
+                            <ellipse cx="378" cy="328" rx="54" ry="32" fill="#222020" />
+                            <circle cx="415" cy="280" r="71" fill="#222020" />
+                            <circle cx="366" cy="220" r="33" fill="#1A1816" />
+                            <circle cx="430" cy="215" r="29" fill="#222020" />
+                            <ellipse cx="478" cy="288" rx="23" ry="17" fill="#1E1C1A" />
+                            <ellipse cx="265" cy="432" rx="46" ry="21" fill="#1A1816" />
+                            <ellipse cx="310" cy="440" rx="46" ry="21" fill="#1A1816" />
+                        </svg>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 1 OPENING cream -->
+            <div class="pg cr" id="p1">
+                <div
+                    style="padding:30px 28px;display:flex;flex-direction:column;height:100%;justify-content:space-between">
+                    <div>
+                        <div
+                            style="font-size:19px;font-weight:700;line-height:1.55;letter-spacing:0.06em;margin-bottom:20px">
+                            你最後一次蹲下來，<br>是什麼時候？</div>
+                        <div style="font-size:12.5px;line-height:2.1;letter-spacing:0.06em;color:#3A3835">
+                            不是在健身房，不是在撿東西。<br>是在街上，在巷弄，在那條你每天走過<br>卻從未真正看見的路。
+                        </div>
+                        <div class="hdiv"></div>
+                        <div style="font-size:12.5px;line-height:2.1;letter-spacing:0.06em;color:#5A5652">
+                            站著走路，只看見人肩膀的高度。<br>低頭滑手機，只看見螢幕的亮光。<br>沒有人教過我們，要在收攤之後<br>回頭看那條路。
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 304 92" width="304" style="display:block">
+                            <rect x="5" y="56" width="7" height="34" fill="#C8C4BC" />
+                            <rect x="14" y="40" width="9" height="50" fill="#C8C4BC" />
+                            <polygon points="18.5,40 12,52 25,52" fill="#C8C4BC" />
+                            <line x1="18.5" y1="52" x2="18.5" y2="60" stroke="#C8C4BC" stroke-width="1.5" />
+                            <rect x="25" y="60" width="7" height="30" fill="#C8C4BC" />
+                            <rect x="50" y="50" width="11" height="40" fill="#B8B4AC" />
+                            <rect x="63" y="33" width="7" height="57" fill="#B8B4AC" />
+                            <circle cx="66.5" cy="30" r="4" fill="#B8B4AC" />
+                            <line x1="66.5" y1="26" x2="66.5" y2="22" stroke="#B8B4AC" stroke-width="1.5" />
+                            <rect x="72" y="53" width="9" height="37" fill="#B8B4AC" />
+                            <rect x="97" y="50" width="8" height="40" fill="#C4C0B8" />
+                            <rect x="107" y="36" width="7" height="54" fill="#C4C0B8" />
+                            <polygon points="110.5,36 107,46 114,46" fill="#C4C0B8" />
+                            <rect x="116" y="56" width="10" height="34" fill="#C4C0B8" />
+                            <rect x="140" y="28" width="9" height="62" fill="#B0ACA4" />
+                            <rect x="151" y="18" width="7" height="72" fill="#B0ACA4" />
+                            <rect x="160" y="40" width="11" height="50" fill="#B0ACA4" />
+                            <rect x="173" y="54" width="8" height="36" fill="#B0ACA4" />
+                            <rect x="198" y="47" width="9" height="43" fill="#C8C4BC" />
+                            <polygon points="202.5,31 196,47 209,47" fill="#C8C4BC" />
+                            <line x1="202.5" y1="31" x2="202.5" y2="22" stroke="#C8C4BC" stroke-width="1.5" />
+                            <rect x="209" y="59" width="8" height="31" fill="#C8C4BC" />
+                            <path d="M232,89 Q248,48 261,68 Q272,38 285,62 Q294,42 304,68" stroke="#C0BCB4"
+                                stroke-width="7" fill="none" stroke-linecap="round" />
+                            <line x1="0" y1="89" x2="304" y2="89" stroke="#C8C4BC" stroke-width="0.5" opacity="0.5" />
+                        </svg>
+                        <div
+                            style="font-size:9.5px;letter-spacing:0.2em;color:#9A9690;margin-top:5px;text-align:center">
+                            台北
+                            · 東京 · 倫敦 · 紐約 · 巴黎 · 里約</div>
+                    </div>
+                    <div style="border-left:2px solid #C8C4BC;padding-left:14px">
+                        <div style="font-size:12.5px;line-height:2;letter-spacing:0.06em;color:#4A4845">
+                            全球六座城市的下水道，<br>住著你以為不存在的鄰居。<br>
+                            <span style="font-weight:600;color:#2C2A27">每100位市民，平均共享1.2隻老鼠。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 2 RAT SPEAKS cream — rat large, bubble compact -->
+            <div class="pg cr" id="p2">
+                <div style="padding:0 0 16px;display:flex;flex-direction:column;height:100%">
+
+                    <!-- Rat: nearly square viewBox → fills full card width, tall -->
+                    <div style="flex-shrink:0">
+                        <svg viewBox="125 148 420 420" width="360" style="display:block">
+                            <!-- City bg -->
+                            <rect x="110" y="360" width="30" height="210" fill="#EDEAE3" opacity="0.45" />
+                            <rect x="142" y="335" width="36" height="235" fill="#EDEAE3" opacity="0.45" />
+                            <rect x="462" y="352" width="28" height="218" fill="#EDEAE3" opacity="0.4" />
+                            <rect x="494" y="330" width="34" height="240" fill="#EDEAE3" opacity="0.38" />
+                            <!-- Ground -->
+                            <line x1="88" y1="448" x2="560" y2="448" stroke="#C8C4BC" stroke-width="0.5"
+                                opacity="0.28" />
+                            <ellipse cx="295" cy="449" rx="115" ry="7" fill="#3C3A37" opacity="0.09" />
+                            <!-- Paw prints -->
+                            <g fill="#8A8680" opacity="0.22">
+                                <ellipse cx="350" cy="451" rx="8" ry="5" />
+                                <circle cx="342" cy="443" r="4" />
+                                <circle cx="358" cy="443" r="4" />
+                                <ellipse cx="386" cy="451" rx="8" ry="5" />
+                                <circle cx="378" cy="443" r="4" />
+                                <circle cx="394" cy="443" r="4" />
+                            </g>
+                            <!-- TAIL -->
+                            <path d="M213,378 Q138,432 162,483 Q180,518 226,510" stroke="#5C5A56" stroke-width="13"
+                                fill="none" stroke-linecap="round" />
+                            <path d="M226,510 Q262,523 255,504" stroke="#5C5A56" stroke-width="9" fill="none"
+                                stroke-linecap="round" />
+                            <!-- BODY -->
+                            <ellipse cx="320" cy="375" rx="108" ry="67" fill="#484542" />
+                            <!-- Fur lines -->
+                            <path d="M250,338 Q280,320 330,325" stroke="#5A5856" stroke-width="1.8" fill="none"
+                                opacity="0.35" />
+                            <path d="M268,324 Q298,306 346,311" stroke="#5A5856" stroke-width="1.4" fill="none"
+                                opacity="0.27" />
+                            <!-- BELLY -->
+                            <ellipse cx="304" cy="390" rx="70" ry="43" fill="#7B7975" />
+                            <ellipse cx="296" cy="385" rx="38" ry="22" fill="#9A9690" opacity="0.22" />
+                            <!-- NECK -->
+                            <ellipse cx="378" cy="328" rx="54" ry="32" fill="#484542" />
+                            <!-- HEAD -->
+                            <circle cx="415" cy="280" r="71" fill="#484542" />
+                            <ellipse cx="400" cy="258" rx="22" ry="16" fill="#5A5856" opacity="0.18" />
+                            <!-- BACK EAR -->
+                            <circle cx="366" cy="220" r="33" fill="#3C3A37" />
+                            <ellipse cx="366" cy="220" rx="18" ry="23" fill="#5C5A56" />
+                            <!-- FRONT EAR -->
+                            <circle cx="430" cy="215" r="29" fill="#484542" />
+                            <ellipse cx="430" cy="215" rx="16" ry="20" fill="#D4726A" />
+                            <ellipse cx="430" cy="208" rx="6" ry="8" fill="#E08880" opacity="0.38" />
+                            <!-- EYE -->
+                            <circle cx="448" cy="254" r="13" fill="#1A1816" />
+                            <circle cx="454" cy="248" r="4.5" fill="white" opacity="0.88" />
+                            <circle cx="456" cy="250" r="1.8" fill="white" opacity="0.5" />
+                            <!-- SNOUT -->
+                            <ellipse cx="478" cy="288" rx="23" ry="17" fill="#5C5A56" />
+                            <ellipse cx="495" cy="288" rx="11" ry="8" fill="#1C1A18" />
+                            <ellipse cx="493" cy="285" rx="4" ry="3" fill="#3C3A37" opacity="0.5" />
+                            <!-- WHISKERS right -->
+                            <line x1="478" y1="280" x2="541" y2="265" stroke="#9A9690" stroke-width="1.4"
+                                opacity="0.65" />
+                            <line x1="478" y1="288" x2="545" y2="288" stroke="#9A9690" stroke-width="1.6"
+                                opacity="0.7" />
+                            <line x1="478" y1="296" x2="538" y2="312" stroke="#9A9690" stroke-width="1.4"
+                                opacity="0.65" />
+                            <!-- WHISKERS left -->
+                            <line x1="478" y1="280" x2="415" y2="264" stroke="#9A9690" stroke-width="1.2"
+                                opacity="0.42" />
+                            <line x1="478" y1="288" x2="412" y2="288" stroke="#9A9690" stroke-width="1.4"
+                                opacity="0.45" />
+                            <line x1="478" y1="296" x2="418" y2="310" stroke="#9A9690" stroke-width="1.2"
+                                opacity="0.42" />
+                            <!-- FEET -->
+                            <ellipse cx="265" cy="432" rx="46" ry="21" fill="#3C3A37" />
+                            <ellipse cx="310" cy="440" rx="46" ry="21" fill="#3C3A37" />
+                            <ellipse cx="265" cy="428" rx="28" ry="9" fill="#484542" opacity="0.4" />
+                            <ellipse cx="310" cy="436" rx="28" ry="9" fill="#484542" opacity="0.4" />
+                            <!-- Claws -->
+                            <line x1="226" y1="432" x2="218" y2="444" stroke="#252322" stroke-width="2.2" />
+                            <line x1="238" y1="437" x2="232" y2="449" stroke="#252322" stroke-width="2.2" />
+                            <line x1="252" y1="439" x2="252" y2="452" stroke="#252322" stroke-width="2.2" />
+                            <line x1="273" y1="441" x2="268" y2="454" stroke="#252322" stroke-width="2.2" />
+                            <line x1="287" y1="445" x2="287" y2="458" stroke="#252322" stroke-width="2.2" />
+                            <line x1="301" y1="446" x2="304" y2="459" stroke="#252322" stroke-width="2.2" />
+                        </svg>
+                    </div>
+
+                    <!-- Bubble tail + compact bubble -->
+                    <div style="padding:0 28px;margin-top:-4px">
+                        <div
+                            style="width:0;height:0;margin-left:20px;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:11px solid #E4E0D8">
+                        </div>
+                        <div
+                            style="background:#E4E0D8;border-radius:10px 10px 10px 2px;padding:11px 16px;font-size:11.5px;line-height:1.95;letter-spacing:0.065em;color:#2C2A27;border:0.5px solid rgba(44,42,39,0.09)">
+                            天黑了，以為城市睡了。<br>
+                            收攤之後，才是真正的開始。<br>
+                            走白天的人，不認識我走的路。<br>
+                            同一座城市，比地圖上的更深。<br>
+                            今晚，低頭進來看看。
+                        </div>
+                        <div
+                            style="font-size:10px;letter-spacing:0.14em;color:#9A9690;margin-top:10px;font-style:italic;text-align:right">
+                            牠在這裡的時間，比你的城市記憶更老。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 3 SIX CITIES cream -->
+            <div class="pg cr" id="p3">
+                <div style="padding:26px 28px;display:flex;flex-direction:column;height:100%">
+                    <div style="font-size:16px;font-weight:700;letter-spacing:0.1em;margin-bottom:18px">六座城市的田野調查</div>
+                    <div style="flex:1;font-size:12px;letter-spacing:0.04em">
+                        <div
+                            style="display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid rgba(44,42,39,0.08)">
+                            <div style="font-weight:600;width:30px;flex-shrink:0;padding-top:2px">台北</div>
+                            <div
+                                style="width:4px;height:4px;border-radius:50%;background:#484542;flex-shrink:0;margin-top:6px">
+                            </div>
+                            <div style="color:#4A4845;line-height:1.8">收攤之後，巷弄才開始說話。夜市散場是另一種城市的開場。</div>
+                        </div>
+                        <div
+                            style="display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid rgba(44,42,39,0.08)">
+                            <div style="font-weight:600;width:30px;flex-shrink:0;padding-top:2px">東京</div>
+                            <div
+                                style="width:4px;height:4px;border-radius:50%;background:#484542;flex-shrink:0;margin-top:6px">
+                            </div>
+                            <div style="color:#4A4845;line-height:1.8">最潔淨的街道，藏得最深。清掃員五點出門，牠們也五點出門。</div>
+                        </div>
+                        <div
+                            style="display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid rgba(44,42,39,0.08)">
+                            <div style="font-weight:600;width:30px;flex-shrink:0;padding-top:2px">倫敦</div>
+                            <div
+                                style="width:4px;height:4px;border-radius:50%;background:#484542;flex-shrink:0;margin-top:6px">
+                            </div>
+                            <div style="color:#4A4845;line-height:1.8">地鐵深處，還有另一種通勤族。牠們的路線圖，比你的更老。</div>
+                        </div>
+                        <div
+                            style="display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid rgba(44,42,39,0.08)">
+                            <div style="font-weight:600;width:30px;flex-shrink:0;padding-top:2px">紐約</div>
+                            <div
+                                style="width:4px;height:4px;border-radius:50%;background:#484542;flex-shrink:0;margin-top:6px">
+                            </div>
+                            <div style="color:#4A4845;line-height:1.8">每平方公里，兩千隻以上。快遞來了，外送來了，牠們也來了。</div>
+                        </div>
+                        <div
+                            style="display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:0.5px solid rgba(44,42,39,0.08)">
+                            <div style="font-weight:600;width:30px;flex-shrink:0;padding-top:2px">巴黎</div>
+                            <div
+                                style="width:4px;height:4px;border-radius:50%;background:#484542;flex-shrink:0;margin-top:6px">
+                            </div>
+                            <div style="color:#4A4845;line-height:1.8">下水道博物館的隔壁，就是真實的下水道。觀光客在上，牠們在下。</div>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:8px;padding:8px 0">
+                            <div style="font-weight:600;width:30px;flex-shrink:0;padding-top:2px">里約</div>
+                            <div
+                                style="width:4px;height:4px;border-radius:50%;background:#484542;flex-shrink:0;margin-top:6px">
+                            </div>
+                            <div style="color:#4A4845;line-height:1.8">嘉年華的紙花落下之後，打掃的是人，留下的是牠們。</div>
+                        </div>
+                    </div>
+                    <div style="background:#F0EDE6;border-radius:3px;padding:13px 16px;margin-top:14px">
+                        <div style="font-size:10px;letter-spacing:0.12em;color:#7A7870;margin-bottom:6px">每100位市民，平均共享
+                        </div>
+                        <div style="display:flex;align-items:baseline;gap:8px">
+                            <div style="font-size:34px;font-weight:700;color:#484542;line-height:1">1.2</div>
+                            <div style="font-size:12px;color:#7A7870;line-height:1.65">隻老鼠<br><span
+                                    style="font-size:10px">（部分城市估計值超過 3.0）</span></div>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:flex-end;margin-top:10px;opacity:0.18">
+                        <svg viewBox="0 0 126 18" width="126" height="18">
+                            <g fill="#484542">
+                                <ellipse cx="10" cy="12" rx="5" ry="4" />
+                                <circle cx="7" cy="7" r="2.5" />
+                                <circle cx="13" cy="7" r="2.5" />
+                                <ellipse cx="35" cy="12" rx="5" ry="4" />
+                                <circle cx="32" cy="7" r="2.5" />
+                                <circle cx="38" cy="7" r="2.5" />
+                                <ellipse cx="60" cy="12" rx="5" ry="4" />
+                                <circle cx="57" cy="7" r="2.5" />
+                                <circle cx="63" cy="7" r="2.5" />
+                                <ellipse cx="85" cy="12" rx="5" ry="4" />
+                                <circle cx="82" cy="7" r="2.5" />
+                                <circle cx="88" cy="7" r="2.5" />
+                                <ellipse cx="110" cy="12" rx="5" ry="4" />
+                                <circle cx="107" cy="7" r="2.5" />
+                                <circle cx="113" cy="7" r="2.5" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE 4 LAST dark -->
+            <div class="pg dk" id="p4">
+                <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 360 582">
+                    <g fill="#E8E4DC" opacity="0.046">
+                        <ellipse cx="54" cy="478" rx="9" ry="7" />
+                        <circle cx="47" cy="467" r="4.5" />
+                        <circle cx="62" cy="467" r="4.5" />
+                        <ellipse cx="306" cy="398" rx="9" ry="7" />
+                        <circle cx="299" cy="387" r="4.5" />
+                        <circle cx="314" cy="387" r="4.5" />
+                        <ellipse cx="80" cy="258" rx="9" ry="7" />
+                        <circle cx="73" cy="247" r="4.5" />
+                        <circle cx="88" cy="247" r="4.5" />
+                        <ellipse cx="316" cy="148" rx="9" ry="7" />
+                        <circle cx="309" cy="137" r="4.5" />
+                        <circle cx="324" cy="137" r="4.5" />
+                        <ellipse cx="174" cy="54" rx="9" ry="7" />
+                        <circle cx="167" cy="43" r="4.5" />
+                        <circle cx="182" cy="43" r="4.5" />
+                    </g>
+                </svg>
+                <div
+                    style="padding:40px 32px;display:flex;flex-direction:column;height:100%;position:relative;z-index:1;justify-content:space-between">
+                    <div>
+                        <div
+                            style="font-size:13px;letter-spacing:0.1em;color:#6A6660;line-height:1.9;margin-bottom:8px">
+                            城市是本書，</div>
+                        <div
+                            style="font-size:15px;letter-spacing:0.08em;color:#B8B4AC;line-height:1.9;margin-bottom:36px">
+                            翻開了就沒辦法假裝沒讀過。</div>
+                        <div style="width:26px;height:0.5px;background:#E8E4DC;opacity:.22;margin-bottom:36px"></div>
+                        <div style="font-size:30px;font-weight:600;letter-spacing:0.06em;color:#E8E4DC;line-height:1.4">
+                            那條巷弄，<br>還開著燈。</div>
+                    </div>
+                    <div style="display:flex;align-items:flex-end;justify-content:space-between">
+                        <svg viewBox="0 0 180 28" width="180" height="28" style="opacity:.2">
+                            <g fill="#E8E4DC">
+                                <ellipse cx="10" cy="19" rx="5" ry="4" />
+                                <circle cx="7" cy="13" r="2.5" />
+                                <circle cx="13" cy="13" r="2.5" />
+                                <ellipse cx="36" cy="22" rx="5" ry="4" />
+                                <circle cx="33" cy="16" r="2.5" />
+                                <circle cx="39" cy="16" r="2.5" />
+                                <ellipse cx="62" cy="19" rx="5" ry="4" />
+                                <circle cx="59" cy="13" r="2.5" />
+                                <circle cx="65" cy="13" r="2.5" />
+                                <ellipse cx="88" cy="22" rx="5" ry="4" />
+                                <circle cx="85" cy="16" r="2.5" />
+                                <circle cx="91" cy="16" r="2.5" />
+                                <ellipse cx="114" cy="19" rx="5" ry="4" />
+                                <circle cx="111" cy="13" r="2.5" />
+                                <circle cx="117" cy="13" r="2.5" />
+                                <ellipse cx="140" cy="22" rx="5" ry="4" />
+                                <circle cx="137" cy="16" r="2.5" />
+                                <circle cx="143" cy="16" r="2.5" />
+                                <ellipse cx="166" cy="19" rx="5" ry="4" />
+                                <circle cx="163" cy="13" r="2.5" />
+                                <circle cx="169" cy="13" r="2.5" />
+                            </g>
+                        </svg>
+                        <svg viewBox="100 200 330 290" width="106" height="93" style="opacity:.25">
+                            <path d="M213,378 Q145,428 167,478 Q183,515 224,508" stroke="#E8E4DC" stroke-width="12"
+                                fill="none" stroke-linecap="round" />
+                            <ellipse cx="320" cy="375" rx="108" ry="67" fill="#E8E4DC" />
+                            <ellipse cx="378" cy="328" rx="54" ry="32" fill="#E8E4DC" />
+                            <circle cx="415" cy="280" r="71" fill="#E8E4DC" />
+                            <circle cx="366" cy="220" r="33" fill="#D4D0C8" />
+                            <circle cx="430" cy="215" r="29" fill="#E8E4DC" />
+                            <ellipse cx="265" cy="432" rx="46" ry="21" fill="#D4D0C8" />
+                            <ellipse cx="310" cy="440" rx="46" ry="21" fill="#D4D0C8" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div style="width:26px;height:0.5px;background:#E8E4DC;opacity:.22;margin-bottom:12px"></div>
+                        <div style="font-size:10px;letter-spacing:0.28em;color:#4A4845;text-align:center">That's It Lab
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-row">
+            <button class="nb" id="prevBtn" onclick="prev()" disabled>&#8592;</button>
+            <div class="dots" id="dots"></div>
+            <button class="nb" id="nextBtn" onclick="nxt()">&#8594;</button>
+        </div>
+    </div>
+
+    <script>
+        let cur = 0; const N = 5;
+        const pages = [0, 1, 2, 3, 4].map(i => document.getElementById('p' + i));
+        const dotsC = document.getElementById('dots');
+        for (let i = 0; i < N; i++) { const d = document.createElement('div'); d.className = 'dot' + (i === 0 ? ' on' : ''); d.onclick = () => go(i); dotsC.appendChild(d); }
+        function go(i) { pages[cur].classList.remove('on'); dotsC.children[cur].classList.remove('on'); cur = i; pages[cur].classList.add('on'); dotsC.children[cur].classList.add('on'); document.getElementById('prevBtn').disabled = cur === 0; document.getElementById('nextBtn').disabled = cur === N - 1; }
+        function prev() { if (cur > 0) go(cur - 1); }
+        function nxt() { if (cur < N - 1) go(cur + 1); }
+    </script>
+</body>
+
+</html>
